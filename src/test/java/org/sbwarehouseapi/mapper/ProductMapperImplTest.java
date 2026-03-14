@@ -1,4 +1,4 @@
-package mapper;
+package org.sbwarehouseapi.mapper;
 
 public class ProductMapperImplTest {
 }
