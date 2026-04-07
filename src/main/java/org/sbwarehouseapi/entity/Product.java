@@ -1,11 +1,16 @@
 package org.sbwarehouseapi.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "products")
+@Getter
+@Setter
 public class Product {
 
     @Id
@@ -47,29 +52,4 @@ public class Product {
     public void setUpdatedAt() {
         this.updatedAt = LocalDateTime.now();
     }
-
-    // Getter und Setter
-    public Long getId() { return id; }  
-
-    public String getName() { return name; }
-    public void setName(String name) { this.name = name; }
-
-    public String getSku() { return sku; }
-    public void setSku(String sku) { this.sku = sku; }
-
-    public BigDecimal getPrice() { return price; }
-    public void setPrice(BigDecimal price) { this.price = price; }
-
-    public Integer getQuantity() { return quantity; }
-    public void setQuantity(Integer quantity) { this.quantity = quantity; }
-
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
-
-    public String getLocation() { return location; }
-    public void setLocation(String location) { this.location = location; }
-
-    public LocalDateTime getCreatedAt() { return createdAt; }
-
-    public LocalDateTime getUpdatedAt() { return updatedAt; }
 }
