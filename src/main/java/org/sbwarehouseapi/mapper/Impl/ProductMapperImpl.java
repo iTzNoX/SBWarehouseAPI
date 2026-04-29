@@ -16,6 +16,7 @@ public class ProductMapperImpl implements ProductMapper {
 
         ProductDTO dto = new ProductDTO();
 
+        dto.setId(product.getId());
         dto.setName(product.getName());
         dto.setSku(product.getSku());
         dto.setPrice(product.getPrice());
