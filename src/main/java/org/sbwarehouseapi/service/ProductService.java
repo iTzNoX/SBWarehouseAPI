@@ -8,11 +8,11 @@ import java.util.List;
 
 public interface ProductService {
 
-    void receiveStock(UpdateProductDTO dto);
+    void receiveStock(Long id, int quantity);
 
-    void removeStock(UpdateProductDTO dto);
+    void removeStock(Long id, int quantity);
 
-    void transferStock(UpdateProductDTO dto1, UpdateProductDTO dto2);
+    void transferStock(Long idFrom,  Long idTo, int quantity);
 
     List<ProductDTO> findAllProducts();
 

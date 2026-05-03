@@ -37,13 +37,13 @@ public class ProductServiceImpl implements ProductService {
         return String.format("%s-%s-%03d", SKUName, SKULocation, count);
     }
 
-    public void receiveStock(UpdateProductDTO dto) {
+    public void receiveStock(Long id, int quantity) {
     }
 
-    public void removeStock(UpdateProductDTO dto){
+    public void removeStock(Long id, int quantity){
     }
 
-    public void transferStock(UpdateProductDTO dto1, UpdateProductDTO dto2) {
+    public void transferStock(Long idFrom, Long idTo, int quantity) {
     }
 
     public List<ProductDTO> findAllProducts() {
