@@ -1,5 +1,7 @@
 package org.sbwarehouseapi.controller;
 
+import org.sbwarehouseapi.dto.UpdateProductDTO;
+import org.sbwarehouseapi.dto.CreateProductDTO;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -21,13 +23,13 @@ public class ProductController {
 
     // POST /api/products
     @PostMapping
-    public String createProduct(@RequestBody String body) {
+    public String createProduct(@RequestBody CreateProductDTO dto) {
         return "temp";
     }
 
     // PUT /api/products/{id}
     @PutMapping("/{id}")
-    public String updateProduct(@PathVariable Long id, @RequestBody String body) {
+    public String updateProduct(@PathVariable Long id, @RequestBody UpdateProductDTO dto) {
         return "temp";
     }
 
