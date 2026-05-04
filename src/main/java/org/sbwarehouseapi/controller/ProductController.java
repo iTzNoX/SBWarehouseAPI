@@ -1,5 +1,7 @@
 package org.sbwarehouseapi.controller;
 
+import org.sbwarehouseapi.dto.UpdateStockDTO;
+import org.sbwarehouseapi.dto.TransferStockDTO;
 import org.sbwarehouseapi.dto.UpdateProductDTO;
 import org.sbwarehouseapi.dto.CreateProductDTO;
 import org.springframework.web.bind.annotation.*;
@@ -8,6 +10,18 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/products")
 public class ProductController {
+
+    // PATCH /api/products/{id}/stock
+    @PatchMapping("/{id}")
+    public void updateStock(@PathVariable Long id, @RequestBody UpdateStockDTO dto) {
+
+    }
+
+    // POST /api/products/transfer
+    @PostMapping("/transfer")
+    public void transferStock(@RequestBody TransferStockDTO dto) {
+
+    }
 
     // GET /api/products
     @GetMapping
