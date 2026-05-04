@@ -1,9 +1,8 @@
 package org.sbwarehouseapi.controller;
 
-import org.sbwarehouseapi.dto.UpdateStockDTO;
-import org.sbwarehouseapi.dto.TransferStockDTO;
-import org.sbwarehouseapi.dto.UpdateProductDTO;
-import org.sbwarehouseapi.dto.CreateProductDTO;
+import org.sbwarehouseapi.dto.*;
+
+import org.sbwarehouseapi.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -11,44 +10,50 @@ import java.util.List;
 @RequestMapping("/api/products")
 public class ProductController {
 
-    // PATCH /api/products/{id}/stock
-    @PatchMapping("/{id}")
-    public void updateStock(@PathVariable Long id, @RequestBody UpdateStockDTO dto) {
+    private final ProductService productService;
+    public ProductController(ProductService productService) {
+        this.productService = productService;
+    }
 
+    // PATCH /api/products/{id}/stock
+    @PatchMapping("/{id}/stock")
+    public void updateStock(@PathVariable Long id, @RequestBody UpdateStockDTO dto) {
+        productService.updateStock(id, dto);
     }
 
     // POST /api/products/transfer
     @PostMapping("/transfer")
     public void transferStock(@RequestBody TransferStockDTO dto) {
-
+        productService.transferStock(dto);
     }
 
     // GET /api/products
     @GetMapping
-    public List<String> findAll() {
-        return List.of("temp");
+    public List<ProductDTO> findAll() {
+        return productService.findAllProducts();
     }
 
     // GET /api/products/{id}
     @GetMapping("/{id}")
-    public String findById(@PathVariable Long id) {
-        return "temp";
+    public ProductDTO findById(@PathVariable Long id) {
+        return productService.findProductById(id);
     }
 
     // POST /api/products
     @PostMapping
-    public String createProduct(@RequestBody CreateProductDTO dto) {
-        return "temp";
+    public ProductDTO createProduct(@RequestBody CreateProductDTO dto) {
+        return productService.createProduct(dto);
     }
 
     // PUT /api/products/{id}
     @PutMapping("/{id}")
-    public String updateProduct(@PathVariable Long id, @RequestBody UpdateProductDTO dto) {
-        return "temp";
+    public ProductDTO updateProduct(@PathVariable Long id, @RequestBody UpdateProductDTO dto) {
+        return productService.updateProduct(id, dto);
     }
 
     // DELETE /api/products/{id}
     @DeleteMapping("/{id}")
     public void deleteProduct(@PathVariable Long id) {
+        productService.deleteProduct(id);
     }
 }
