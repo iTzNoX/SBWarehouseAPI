@@ -1,18 +1,14 @@
 package org.sbwarehouseapi.service;
 
-import org.sbwarehouseapi.dto.CreateProductDTO;
-import org.sbwarehouseapi.dto.ProductDTO;
-import org.sbwarehouseapi.dto.UpdateProductDTO;
+import org.sbwarehouseapi.dto.*;
 
 import java.util.List;
 
 public interface ProductService {
 
-    void receiveStock(Long id, int quantity);
+    void updateStock(Long id, UpdateStockDTO dto);
 
-    void removeStock(Long id, int quantity);
-
-    void transferStock(Long idFrom,  Long idTo, int quantity);
+    void transferStock(TransferStockDTO dto);
 
     List<ProductDTO> findAllProducts();
 

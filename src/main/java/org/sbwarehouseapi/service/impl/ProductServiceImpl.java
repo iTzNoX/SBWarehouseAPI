@@ -1,8 +1,6 @@
 package org.sbwarehouseapi.service.impl;
 
-import org.sbwarehouseapi.dto.CreateProductDTO;
-import org.sbwarehouseapi.dto.ProductDTO;
-import org.sbwarehouseapi.dto.UpdateProductDTO;
+import org.sbwarehouseapi.dto.*;
 import org.sbwarehouseapi.repository.ProductRepository;
 import org.sbwarehouseapi.service.ProductService;
 import org.springframework.stereotype.Service;
@@ -37,13 +35,10 @@ public class ProductServiceImpl implements ProductService {
         return String.format("%s-%s-%03d", SKUName, SKULocation, count);
     }
 
-    public void receiveStock(Long id, int quantity) {
+    public void updateStock(Long id, UpdateStockDTO dto) {
     }
 
-    public void removeStock(Long id, int quantity){
-    }
-
-    public void transferStock(Long idFrom, Long idTo, int quantity) {
+    public void transferStock(TransferStockDTO dto) {
     }
 
     public List<ProductDTO> findAllProducts() {
