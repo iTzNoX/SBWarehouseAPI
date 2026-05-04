@@ -68,14 +68,12 @@ class ProductMapperImplTest {
         UpdateProductDTO dto = new UpdateProductDTO();
 
         dto.setName("Updated Laptop");
-        dto.setQuantity(99);
         dto.setPrice(null); // no override because Price cannot be null
 
         mapper.updateEntityFromUpdateProductDTO(dto, entity);
 
         assertThat(entity.getName()).isEqualTo("Updated Laptop");
         assertThat(entity.getLocation()).isEqualTo("Berlin");
-        assertThat(entity.getQuantity()).isEqualTo(99);
 
         // not changed
         assertThat(entity.getPrice()).isEqualTo(new BigDecimal("1000.00"));

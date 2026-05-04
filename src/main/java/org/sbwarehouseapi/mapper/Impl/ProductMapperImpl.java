@@ -44,7 +44,6 @@ public class ProductMapperImpl implements ProductMapper {
 
         if (dto.getName() != null) entity.setName(dto.getName());
         if (dto.getPrice() != null) entity.setPrice(dto.getPrice());
-        if (dto.getQuantity() != null) entity.setQuantity(dto.getQuantity());
         if (dto.getDescription() != null) entity.setDescription(dto.getDescription());
         if (dto.getLocation() != null) entity.setLocation(dto.getLocation());
     }
