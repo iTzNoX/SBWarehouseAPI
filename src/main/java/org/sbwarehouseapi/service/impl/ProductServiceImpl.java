@@ -53,7 +53,7 @@ public class ProductServiceImpl implements ProductService {
         return null;
     }
 
-    public ProductDTO updateProduct (UpdateProductDTO dto) {
+    public ProductDTO updateProduct (Long id, UpdateProductDTO dto) {
         return null;
     }
 
